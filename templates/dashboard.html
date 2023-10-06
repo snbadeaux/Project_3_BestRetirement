@@ -1,0 +1,101 @@
+{% include 'header.html' %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+            <h1>Retirement Home Quality, Staffing, and Surrounding Area Dashboard</h1>
+            <p>Use the interactive charts below to explore the dataset</p>
+        </div>
+    </div>
+    <div class="row">
+        <!-- <div class="col-md-2">
+            <div class="well">
+                <h5>Retirement Home Name:</h5>
+                <select id="selDataset" onchange="optionChanged(this.value)"></select>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Quick and General Info</h3>
+                </div>
+                <div id="sample-metadata" class="panel-body"></div>
+            </div>
+        </div> -->
+    </div>
+    
+    <div id="map1" class="col-md-12"></div>
+    <div class="row">
+        <div class="col-md-4" id="categoryTop" style="margin: 6px 0px; border-radius: 4px;">
+
+            <div class="col-md-12" style="box-shadow: 0px 3px 4px 0px; margin: 6px 0px; border-radius: 4px;">
+                <form style="float: none;">
+                    <label style="font-size: 16px; margin-right: 7px;">Top: </label>
+                    <input type="radio" name="topX" value="10" checked>
+                    <label style="margin-right: 7px;">10</label>
+                    <input type="radio" name="topX" value="20">
+                    <label style="margin-right: 7px;">20</label>
+                    <input type="radio" name="topX" value="50">
+                    <label style="margin-right: 7px;">50</label>
+                    <input type="radio" name="topX" value="100">
+                    <label style="margin-right: 7px;">100</label>
+                    <input type="radio" name="topX" value="200">
+                    <label>200</label>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-12" style="margin: 0px 0px !important; padding: 0px 0px !important;">
+        <div class='col-md-6' id="categories" style="margin: 0px 0px; padding: 0px 0px;">
+        </div>
+        <div id="lowerDiv" class="col-md-8" style="margin: 0px 0px; padding: 0px 0px;">
+
+        </div>
+    </div>
+    <div class="row col-md-12">
+        <div id="result"></div>
+    </div>
+    <div class="row col-md-12">
+        <!-- <canvas id="groupCategoryChart"></canvas> -->
+        <div id="groupedChart"></div>
+    </div>
+    <div class="row col-md-12" style="margin: 6px 4px 25px 4px">
+        <div class="col-md-6">
+
+            <canvas id="categoryDoughnutChart"></canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas id="correlationsChart"></canvas>
+            
+        </div>
+    </div>
+    <!-- <canvas id="groupedChart"></canvas> -->
+
+
+</div>
+
+
+
+<!-- Radial dial -->
+<!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<!-- D3 JavaScript -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<!-- Our JavaScript -->
+
+<script type="text/javascript" src="{{ url_for('static', filename='kmbDashboard.js') }}"></script>
+
+<!-- <script>
+        let toggle = document.querySelector('.toggle');
+        let menu2 = document.querySelector('.menu2');
+        toggle.onclick = function () {
+            menu2.classList.toggle('active')
+        }
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+
+{% include "header.html" %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined Visualizations</title>
+  <!-- Include necessary CSS and JavaScript libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+  <div class="container">
+
+      <!-- Jumbotron Section -->
+      <div class="row">
+          <div class="col-md-12 jumbotron text-center">
+              <h1>Your Journey to Peaceful Retirement Begins Here.</h1>
+              <p>Use the interactive map below to create a home for a lifetime of memories.</p>
+          </div>
+      </div>
+
+      <!-- Visualization 2: Map -->
+              <div id="map" style="height: 400px;"></div>
+          </div>
+      </div>
+      <!-- Jumbotron Section -->
+
+      <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+            <h1>Embrace the Golden Years with Us!</h1>
+            <p>Find The State Where Comfort and Care Meet Your Retirement Dreams</p>
+        </div>
+    </div>
+
+    <!-- Visualization 1: Bar Chart -->
+    <div class="row">
+        <div class="col-md-12">
+            <canvas id="providerStateChart" width="500" height="200"></canvas>
+        </div>
+    </div>
+      <!-- Additional Visualizations -->
+      <div class="row">
+          <div class="col-md-2">
+              <div class="col-md-5">
+                  <div id="bar"></div>
+              </div>
+              <div class="col-md-5">
+                  <div id="gauge"></div>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <div id="bubble"></div>
+          </div>
+      </div>
+  </div>
+
+  <script type="text/javascript" src="{{ url_for('static', filename='Thanh_overviews.js') }}"></script>
+
+  <div class="row">
+    <div class="col-md-2">
+    <div class="col-md-5">
+      <div id="bar"></div>
+    </div>
+    <div class="col-md-5">
+      <div id="gauge"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="bubble"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
